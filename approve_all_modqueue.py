@@ -32,7 +32,7 @@ class Bot(object):
         '''Goes through subreddits individually and then approves all submission, then demods'''
 
         for subreddit in self.r.get_my_moderation(limit=None):
-            for thing in [i for i in subreddit.get_modqueue(limit=None)]:
+            for thing in [i for i in subreddit.get_mod_queue(limit=None)]:
                 thing.approve()
             subreddit.remove_moderator(self.r.user.name)
 
