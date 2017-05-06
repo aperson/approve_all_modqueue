@@ -13,7 +13,7 @@ except:
 
 
 class Bot(object):
-    def __init__(self, username, password):
+    def __init__(self, username, password, client_id, client_secret):
         user_agent = '/u/{} running approve_all_modqueue.py'.format(username)
         self.r = praw.Reddit(client_id=client_id, client_secret=client_secret,
             user_agent=user_agent, username=username, password=password)
